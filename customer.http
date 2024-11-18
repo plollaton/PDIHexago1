@@ -1,0 +1,20 @@
+POST http://localhost:8080/customer
+content-type: application/json
+
+{
+    "name": "Pio Lollato Neto",
+    "phone": "44 9 9991-7907",
+    "docNumber": "123.456.789-00",
+    "email": "plollaton@gmail.com"
+}
+
+###
+GET http://localhost:8080/customer/1
+Accept: application/json
+
+###
+GET http://localhost:8080/customers
+Accept: application/json
+
+###
+DELETE http://localhost:8080/customer/1
