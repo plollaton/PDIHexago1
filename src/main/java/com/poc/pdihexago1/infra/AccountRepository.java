@@ -9,18 +9,18 @@ import com.poc.pdihexago1.domains.accounts.ports.output.IAccountsRepository;
 public class AccountRepository implements IAccountsRepository {
 
     private AccountJpaRepository accountJpaRepository;
-    private AccountEntityMapper AccountEntityMapper;
+    private AccountEntityMapper accountEntityMapper;
 
     public AccountRepository(AccountEntityMapper accountEntityMapper,
             AccountJpaRepository accountJpaRepository) {
-        this.AccountEntityMapper = accountEntityMapper;
+        this.accountEntityMapper = accountEntityMapper;
         this.accountJpaRepository = accountJpaRepository;
     }
 
     @Override
     public void save(AccountDto accountDto) {
 
-        AccountEntity entity = this.AccountEntityMapper.fromAccountDto(accountDto);
+        AccountEntity entity = this.accountEntityMapper.fromAccountDto(accountDto);
         System.out.println(entity);
 
         this.accountJpaRepository.save(entity);

@@ -9,10 +9,6 @@ import jakarta.validation.ConstraintValidatorContext;
 public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, String>{
     
     @Override
-    public void initialize(UniqueEmail constraintAnnotation) {
-    }
-
-    @Override
     public boolean isValid(String email, ConstraintValidatorContext context) {
         ICustomerRepository customerRepository = SpringContextHolder.getBean(ICustomerRepository.class);
         return customerRepository.findOneByEmail(email) == null;

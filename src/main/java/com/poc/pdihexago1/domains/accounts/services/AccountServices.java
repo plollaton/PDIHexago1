@@ -8,17 +8,7 @@ import com.poc.pdihexago1.domains.accounts.mappers.AccountCustomerMapper;
 import com.poc.pdihexago1.domains.accounts.mappers.AccountMappers;
 import com.poc.pdihexago1.domains.accounts.models.Account;
 import com.poc.pdihexago1.domains.accounts.models.AccountCustomer;
-//import com.poc.pdihexago1.domains.accounts.dtos.CustomerAccountDto;
-//import com.poc.pdihexago1.domains.accounts.dtos.NewAccountDto;
-//import com.poc.pdihexago1.domains.accounts.mappers.AccountMappers;
-//import com.poc.pdihexago1.domains.accounts.models.Account;
 import com.poc.pdihexago1.domains.accounts.ports.input.IAccountApiPort;
-//import com.poc.pdihexago1.domains.accounts.ports.input.ICustomerAccountPort;
-//import com.poc.pdihexago1.domains.accounts.ports.output.IAccountsRepository;
-//import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
-//import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
-//import com.poc.pdihexago1.domains.customers.models.Customer;
-//import com.poc.pdihexago1.domains.customers.ports.input.ICustomerApiPort;
 import com.poc.pdihexago1.domains.accounts.ports.input.ICustomerPort;
 import com.poc.pdihexago1.domains.accounts.ports.output.IAccountsRepository;
 import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
@@ -52,7 +42,6 @@ public class AccountServices implements IAccountApiPort {
 
         this.accountsRepository.save(this.accountMappers.toAccountDto(account));
 
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAccount'");
     }
 
