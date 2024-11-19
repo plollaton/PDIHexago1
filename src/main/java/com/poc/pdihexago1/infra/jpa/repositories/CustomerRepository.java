@@ -1,4 +1,4 @@
-package com.poc.pdihexago1.infra;
+package com.poc.pdihexago1.infra.jpa.repositories;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 
 import com.poc.pdihexago1.domains.customers.models.Customer;
 import com.poc.pdihexago1.domains.customers.ports.output.ICustomerRepository;
+import com.poc.pdihexago1.infra.jpa.entities.CustomerEntity;
+import com.poc.pdihexago1.infra.jpa.jparepositories.CustomerJpaRepository;
+import com.poc.pdihexago1.infra.jpa.mappers.CustomerEntityMapper;
 
 @Component
 public class CustomerRepository implements ICustomerRepository {

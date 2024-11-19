@@ -11,7 +11,6 @@ import com.poc.pdihexago1.domains.accounts.models.Account;
 import com.poc.pdihexago1.domains.accounts.ports.input.IAccountApiPort;
 import com.poc.pdihexago1.domains.accounts.ports.input.ICustomerPort;
 import com.poc.pdihexago1.domains.accounts.ports.output.IAccountsRepository;
-import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
 
 @Service

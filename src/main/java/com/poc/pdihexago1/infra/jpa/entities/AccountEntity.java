@@ -1,4 +1,4 @@
-package com.poc.pdihexago1.infra;
+package com.poc.pdihexago1.infra.jpa.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
