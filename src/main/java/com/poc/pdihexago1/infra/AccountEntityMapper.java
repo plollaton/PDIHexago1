@@ -10,5 +10,6 @@ import com.poc.pdihexago1.domains.accounts.dtos.AccountDto;
 public interface AccountEntityMapper {
 
     AccountEntity fromAccountDto(AccountDto accountDto);
+    AccountDto toAccountDto(AccountEntity accountEntity);
 
 }

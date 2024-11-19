@@ -12,5 +12,6 @@ injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface AccountMappers {
 
     AccountDto toAccountDto(Account account);
+    Account fromAccountDto(AccountDto accountDto);
 
 }

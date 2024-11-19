@@ -31,8 +31,9 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer getCustomerById(Long customerId) {
-        Optional<CustomerEntity> entity = Optional.of(this.customerJpaRepository.getReferenceById(customerId));
-        if (entity.isPresent()){
+        Optional<CustomerEntity> entity = this.customerJpaRepository.findById(customerId);
+        
+        if (!entity.isPresent()){
             return null;
         }
 
@@ -47,7 +48,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer findOneByEmail(String email) {
-        CustomerEntity entity = this.customerJpaRepository.findOneByEmail(email);
+        CustomerEntity entity = this.customerJpaRepository.findByEmail(email);
         return this.customerEntityMapper.toCustomer(entity);
     }
 

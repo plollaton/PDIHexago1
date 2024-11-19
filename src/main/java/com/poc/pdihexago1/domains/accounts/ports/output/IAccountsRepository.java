@@ -4,6 +4,6 @@ import com.poc.pdihexago1.domains.accounts.dtos.AccountDto;
 
 public interface IAccountsRepository {
 
-    void save(AccountDto accountDto);
+    AccountDto save(AccountDto accountDto);
 
 }

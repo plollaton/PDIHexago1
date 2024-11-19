@@ -18,13 +18,14 @@ public class AccountRepository implements IAccountsRepository {
     }
 
     @Override
-    public void save(AccountDto accountDto) {
+    public AccountDto save(AccountDto accountDto) {
 
         AccountEntity entity = this.accountEntityMapper.fromAccountDto(accountDto);
         System.out.println(entity);
 
         this.accountJpaRepository.save(entity);
 
+        return this.accountEntityMapper.toAccountDto(entity);
     }
 
 }
