@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
+import com.poc.pdihexago1.domains.accounts.dtos.AccountCustomerDto;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerNewDto;
 import com.poc.pdihexago1.domains.customers.models.Customer;
@@ -21,4 +22,6 @@ public interface CustomerMappers {
     CustomerDto toCustomerDto(Customer customer);
 
     List<CustomerDto> toCustomerDtoList(List<Customer> customers);
+
+    AccountCustomerDto toAccountCustomerDto(Customer customer);
 }
