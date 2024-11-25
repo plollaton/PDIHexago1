@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.poc.pdihexago1.apis.customer.dtos.CustomerRequestBody;
 import com.poc.pdihexago1.apis.customer.dtos.CustomerResponseBody;
+import com.poc.pdihexago1.apis.customer.mappers.RequestCustomerMappers;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerNewDto;
-import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
 import com.poc.pdihexago1.domains.customers.ports.input.ICustomerApiPort;
+import com.poc.pdihexago1.domains.exceptions.CustomerNotFoundException;
 
 import jakarta.validation.Valid;
 

@@ -1,7 +1,7 @@
 package com.poc.pdihexago1.apis.account.dtos;
 
 public record AccountRequestBody(
-    String number,
+    String accountNumber,
     Long customerId
 ) {
 

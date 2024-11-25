@@ -1,5 +1,7 @@
 package com.poc.pdihexago1.domains.customers.models;
 
+import java.util.List;
+
 import com.poc.pdihexago1.domains.customers.validators.UniqueEmail;
 
 import jakarta.validation.constraints.Email;
@@ -32,4 +34,6 @@ public class Customer {
     @UniqueEmail
     @Email
     private String email;
+
+    private List<CustomerAccount> accounts;
 }

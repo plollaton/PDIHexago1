@@ -11,7 +11,7 @@ import com.poc.pdihexago1.domains.accounts.models.Account;
 import com.poc.pdihexago1.domains.accounts.ports.input.IAccountApiPort;
 import com.poc.pdihexago1.domains.accounts.ports.input.ICustomerPort;
 import com.poc.pdihexago1.domains.accounts.ports.output.IAccountsRepository;
-import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
+import com.poc.pdihexago1.domains.exceptions.CustomerNotFoundException;
 
 @Service
 public class AccountServices implements IAccountApiPort {
@@ -35,7 +35,7 @@ public class AccountServices implements IAccountApiPort {
     public AccountDto addAccount(NewAccountDto newAccountDto) throws CustomerNotFoundException {
 
         Account account = new Account();
-        account.setNumber(newAccountDto.number());
+        account.setAccountNumber(newAccountDto.accountNumber());
 
         AccountCustomerDto customer = this.customerPort.getCustomerById(newAccountDto.customerId());
         account.setCustomer(this.accountCustomerMapper.fromAccountCustomerDto(customer));

@@ -23,5 +23,5 @@ public interface CustomerMappers {
 
     List<CustomerDto> toCustomerDtoList(List<Customer> customers);
 
-    AccountCustomerDto toAccountCustomerDto(Customer customer);
+    AccountCustomerDto toAccountCustomerDto(CustomerDto customer);
 }

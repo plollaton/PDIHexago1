@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Account {
 
     private Long id;
-    private String number;
+    private String accountNumber;
     private AccountCustomer customer;
 
 
