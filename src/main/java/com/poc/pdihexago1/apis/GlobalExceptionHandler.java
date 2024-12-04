@@ -10,7 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
+import com.poc.pdihexago1.domains.exceptions.CustomerNotFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

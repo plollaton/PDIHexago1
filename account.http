@@ -2,7 +2,7 @@ POST http://localhost:8080/account
 content-type: application/json
 
 {
-    "number": "123.987-0",
+    "accountNumber": "33333",
     "customerId": 1
 }
 

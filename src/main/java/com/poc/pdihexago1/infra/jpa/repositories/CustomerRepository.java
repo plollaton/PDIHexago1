@@ -3,6 +3,7 @@ package com.poc.pdihexago1.infra.jpa.repositories;
 import java.util.List;
 import java.util.Optional;
 
+import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import org.springframework.stereotype.Component;
 
 import com.poc.pdihexago1.domains.customers.models.Customer;
@@ -24,35 +25,38 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public Customer save(Customer customer) {
+    public CustomerDto save(CustomerDto customerDto) {
 
-        CustomerEntity entity = this.customerJpaRepository.save(this.customerEntityMapper.fromCustomer(customer));
+        CustomerEntity entity = this.customerJpaRepository.save(this.customerEntityMapper.fromCustomerDto(customerDto));
 
 
-        return this.customerEntityMapper.toCustomer(entity);
+        return this.customerEntityMapper.toCustomerDto(entity);
     }
 
     @Override
-    public Customer getCustomerById(Long customerId) {
+    public CustomerDto getCustomerById(Long customerId) {
         Optional<CustomerEntity> entity = this.customerJpaRepository.findById(customerId);
         
         if (!entity.isPresent()){
             return null;
         }
 
-        return this.customerEntityMapper.toCustomer(entity.get());
+        CustomerEntity y = entity.get();
+
+        CustomerDto x = this.customerEntityMapper.toCustomerDto(y);
+        return x;
     }
 
     @Override
-    public List<Customer> getAllCustomers() {
+    public List<CustomerDto> getAllCustomers() {
         List<CustomerEntity> customersEntity = this.customerJpaRepository.findAll();
-        return this.customerEntityMapper.toCustomerList(customersEntity);
+        return this.customerEntityMapper.toCustomerDtoList(customersEntity);
     }
 
     @Override
-    public Customer findOneByEmail(String email) {
+    public CustomerDto findOneByEmail(String email) {
         CustomerEntity entity = this.customerJpaRepository.findByEmail(email);
-        return this.customerEntityMapper.toCustomer(entity);
+        return this.customerEntityMapper.toCustomerDto(entity);
     }
 
     @Override

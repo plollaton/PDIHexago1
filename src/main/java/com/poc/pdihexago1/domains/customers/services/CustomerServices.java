@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerNewDto;
-import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
 import com.poc.pdihexago1.domains.customers.mappers.CustomerMappers;
 import com.poc.pdihexago1.domains.customers.models.Customer;
 import com.poc.pdihexago1.domains.customers.ports.input.ICustomerApiPort;
 import com.poc.pdihexago1.domains.customers.ports.output.ICustomerRepository;
+import com.poc.pdihexago1.domains.exceptions.CustomerNotFoundException;
 import com.poc.pdihexago1.utils.FluentValidator;
 
 @Service
@@ -36,28 +36,28 @@ public class CustomerServices implements ICustomerApiPort {
             throw new IllegalArgumentException(validator.getErrorMessages());
         }
 
-        Customer newCustomer = this.customerRepository.save(customer);
+        CustomerDto newCustomer = this.customerRepository.save(this.customerMappers.toCustomerDto(customer));
 
-        return this.customerMappers.toCustomerDto(newCustomer);
+        return newCustomer;
     }
 
     @Override
     public CustomerDto getCustomerById(Long customerId) throws CustomerNotFoundException{
         
-        Customer customer = this.customerRepository.getCustomerById(customerId);
+        CustomerDto customer = this.customerRepository.getCustomerById(customerId);
         if (customer == null){
             throw new CustomerNotFoundException();
         }
 
-        return this.customerMappers.toCustomerDto(customer);
+        return customer;
         
     }
 
     @Override
     public List<CustomerDto> getAllCustomers() {
-        List<Customer> customers = this.customerRepository.getAllCustomers();
+        List<CustomerDto> customers = this.customerRepository.getAllCustomers();
 
-        return this.customerMappers.toCustomerDtoList(customers);
+        return customers;
     }
 
     @Override

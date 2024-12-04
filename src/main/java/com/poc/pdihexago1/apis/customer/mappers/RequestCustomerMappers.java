@@ -1,4 +1,4 @@
-package com.poc.pdihexago1.apis.customer;
+package com.poc.pdihexago1.apis.customer.mappers;
 
 import java.util.List;
 

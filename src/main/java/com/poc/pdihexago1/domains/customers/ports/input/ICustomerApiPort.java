@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
 import com.poc.pdihexago1.domains.customers.dtos.CustomerNewDto;
-import com.poc.pdihexago1.domains.customers.exceptions.CustomerNotFoundException;
+import com.poc.pdihexago1.domains.exceptions.CustomerNotFoundException;
 
 public interface ICustomerApiPort {
 

@@ -1,18 +1,19 @@
 package com.poc.pdihexago1.domains.customers.ports.output;
 
+import com.poc.pdihexago1.domains.customers.dtos.CustomerDto;
+
 import java.util.List;
 
-import com.poc.pdihexago1.domains.customers.models.Customer;
 
 public interface ICustomerRepository {
 
-    Customer save(Customer customer);
+    CustomerDto save(CustomerDto customerdto);
 
-    Customer getCustomerById(Long customerId);
+    CustomerDto getCustomerById(Long customerId);
 
-    List<Customer> getAllCustomers();
+    List<CustomerDto> getAllCustomers();
 
-    Customer findOneByEmail(String email);
+    CustomerDto findOneByEmail(String email);
 
     public void deleteCustomerById(Long customerId);
 }
